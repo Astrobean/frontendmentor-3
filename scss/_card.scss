@@ -4,6 +4,11 @@
   display: flex;
   flex-direction: column;
 
+  @media screen and (min-width: 376px) {
+    flex-direction: row-reverse;
+    max-width: 1110px;
+  }
+
   .card__image {
     flex: 0 0 15rem;
     background: url(../images/image-header-mobile.jpg), $softViolet;
@@ -11,64 +16,97 @@
     background-size: cover;
     background-blend-mode: multiply;
     border-radius: 0.5rem 0.5rem 0 0;
+
+    @media screen and (min-width: 376px) {
+      flex: 1 1 48%;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
   }
 
   .card__body {
     background-color: $darkDesaturatedBlue;
     border-radius: 0 0 0.5rem 0.5rem;
     padding: 2rem;
-  }
 
-  .card__title {
-    font-family: Inter;
-    font-weight: 700;
-    color: white;
-    text-align: center;
-    margin-bottom: 1rem;
-
-    span {
-      color: $softViolet;
+    @media screen and (min-width: 376px) {
+      flex: 1 1 52%;
+      padding: 5rem 3rem 3rem 3rem;
+      border-radius: 0.5rem 0 0 0.5rem;
     }
-  }
 
-  .card__text {
-    font-family: Inter;
-    font-weight: 400;
-    color: $transparentWhiteP;
-    text-align: center;
-    line-height: 1.3rem;
-    letter-spacing: 1px;
-    margin-bottom: 2rem;
-  }
+    .card__title {
+      font-family: Inter;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      margin-bottom: 1rem;
 
-  .card__stats {
-    display: flex;
-    flex-direction: column;
-
-    .stats__list {
-      &:not(:last-child) {
-        margin-bottom: 1rem;
+      span {
+        color: $softViolet;
       }
 
-      h3 {
-        font-family: Inter;
-        font-weight: 700;
-        color: white;
+      @media screen and (min-width: 376px) {
+        text-align: left;
+        font-size: 2.5rem;
+      }
+    }
+
+    .card__text {
+      font-family: Inter;
+      font-weight: 400;
+      color: $transparentWhiteP;
+      text-align: center;
+      line-height: 1.3rem;
+      letter-spacing: 1px;
+      font-size: 15px;
+      margin-bottom: 2rem;
+
+      @media screen and (min-width: 376px) {
+        text-align: left;
+        padding-right: 3rem;
+        margin-bottom: 3rem;
+      }
+    }
+
+    .card__stats {
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 376px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: 5rem;
       }
 
-      li {
-        list-style: none;
-        line-height: 2rem;
-        text-align: center;
-      }
+      .stats__list {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
 
-      li:nth-child(2) {
-        text-transform: uppercase;
-        font-family: Inter;
-        font-weight: 400;
-        font-size: 0.8em;
-        letter-spacing: 1px;
-        color: $transparentWhiteH;
+        h3 {
+          font-family: Inter;
+          font-weight: 700;
+          color: white;
+        }
+
+        li {
+          list-style: none;
+          line-height: 2rem;
+          text-align: center;
+
+          @media screen and (min-width: 376px) {
+            text-align: left;
+          }
+        }
+
+        li:nth-child(2) {
+          text-transform: uppercase;
+          font-family: Inter;
+          font-weight: 400;
+          font-size: 0.8em;
+          letter-spacing: 1px;
+          color: $transparentWhiteH;
+        }
       }
     }
   }

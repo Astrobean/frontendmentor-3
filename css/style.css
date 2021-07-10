@@ -22,6 +22,13 @@ body {
   flex-direction: column;
 }
 
+@media screen and (min-width: 376px) {
+  .card {
+    flex-direction: row-reverse;
+    max-width: 1110px;
+  }
+}
+
 .card .card__image {
   flex: 0 0 15rem;
   background: url(../images/image-header-mobile.jpg), #aa5cdb;
@@ -31,13 +38,28 @@ body {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
+@media screen and (min-width: 376px) {
+  .card .card__image {
+    flex: 1 1 48%;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+}
+
 .card .card__body {
   background-color: #1b1938;
   border-radius: 0 0 0.5rem 0.5rem;
   padding: 2rem;
 }
 
-.card .card__title {
+@media screen and (min-width: 376px) {
+  .card .card__body {
+    flex: 1 1 52%;
+    padding: 5rem 3rem 3rem 3rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+}
+
+.card .card__body .card__title {
   font-family: Inter;
   font-weight: 700;
   color: white;
@@ -45,42 +67,72 @@ body {
   margin-bottom: 1rem;
 }
 
-.card .card__title span {
+.card .card__body .card__title span {
   color: #aa5cdb;
 }
 
-.card .card__text {
+@media screen and (min-width: 376px) {
+  .card .card__body .card__title {
+    text-align: left;
+    font-size: 2.5rem;
+  }
+}
+
+.card .card__body .card__text {
   font-family: Inter;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.75);
   text-align: center;
   line-height: 1.3rem;
   letter-spacing: 1px;
+  font-size: 15px;
   margin-bottom: 2rem;
 }
 
-.card .card__stats {
+@media screen and (min-width: 376px) {
+  .card .card__body .card__text {
+    text-align: left;
+    padding-right: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.card .card__body .card__stats {
   display: flex;
   flex-direction: column;
 }
 
-.card .card__stats .stats__list:not(:last-child) {
+@media screen and (min-width: 376px) {
+  .card .card__body .card__stats {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 5rem;
+  }
+}
+
+.card .card__body .card__stats .stats__list:not(:last-child) {
   margin-bottom: 1rem;
 }
 
-.card .card__stats .stats__list h3 {
+.card .card__body .card__stats .stats__list h3 {
   font-family: Inter;
   font-weight: 700;
   color: white;
 }
 
-.card .card__stats .stats__list li {
+.card .card__body .card__stats .stats__list li {
   list-style: none;
   line-height: 2rem;
   text-align: center;
 }
 
-.card .card__stats .stats__list li:nth-child(2) {
+@media screen and (min-width: 376px) {
+  .card .card__body .card__stats .stats__list li {
+    text-align: left;
+  }
+}
+
+.card .card__body .card__stats .stats__list li:nth-child(2) {
   text-transform: uppercase;
   font-family: Inter;
   font-weight: 400;
