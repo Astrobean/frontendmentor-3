@@ -10,15 +10,21 @@
   }
 
   .card__image {
-    flex: 0 0 15rem;
-    background: url(../images/image-header-mobile.jpg), $softViolet;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: multiply;
-    border-radius: 0.5rem 0.5rem 0 0;
+    @media screen and (max-width: 375px) {
+      flex: 0 0 15rem;
+      background: url(../images/image-header-mobile.jpg), $softViolet;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: multiply;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
 
     @media screen and (min-width: 376px) {
       flex: 1 1 48%;
+      background: url(../images/image-header-desktop.jpg), $softViolet;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: multiply;
       border-radius: 0 0.5rem 0.5rem 0;
     }
   }
